@@ -97,38 +97,6 @@ We present a complete framework, from path planning in a virtual map to high-pre
 
 * **Control Architecture:** Simulink Block Diagram (Cascade Control)
 
-
-
----
-
-
-
-## 💾 Installation
-
-
-
-Follow these steps to set up the simulation environment:
-
-
-
-1.  **Clone the repository:**
-
-    ```bash
-
-    git clone [https://github.com/marcoferreri/Autonomous-Library-Robot-Simulink.git](https://github.com/marcoferreri/Autonomous-Library-Robot-Simulink.git)
-
-    ```
-
-2.  **Open MATLAB:**
-
-    Navigate to the cloned folder within MATLAB.
-
-3.  **Add to Path:**
-
-    Right-click the folder in MATLAB's "Current Folder" window and select *Add to Path -> Selected Folders and Subfolders*.
-
-
-
 ---
 
 
