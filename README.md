@@ -1,6 +1,12 @@
 # Simulink-Based Design and Control of an Autonomous Library Assistant Robot
 
+# Simulink-Based Design and Control of an Autonomous Library Assistant Robot
 
+![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge) ![Maintained](https://img.shields.io/badge/status-maintained-brightgreen?style=for-the-badge) ![Award](https://img.shields.io/badge/ExpoCEM_3.0_🏆-2nd_Place_(Senior)-FFD700?style=for-the-badge)
+
+![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=for-the-badge&logo=mathworks&logoColor=white) ![Simulink](https://img.shields.io/badge/Simulink-orange?style=for-the-badge&logo=mathworks&logoColor=white)
+
+**Digital Twin simulation of an autonomous differential drive robot for library navigation. Features PRM path planning in MATLAB and double-loop PI control in Simulink.**
 
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
