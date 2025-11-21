@@ -216,6 +216,8 @@ As indicated in the MIT License, this software is provided **"as is", without wa
 * Emilio Rafael García García
 * Paul Pfister
 * Irving Alejandro Vásquez Salinas
+* Alejandro Alvarez Gil
+* Paul
 
 ---
 
