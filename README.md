@@ -206,11 +206,11 @@ As indicated in the MIT License, this software is provided **"as is", without wa
 
 ## 👥 Authors
 
-**Lead Developers**
+**PM**
 * **Marco Ferreri**
 * **Pietro Borracelli**
 
-**Assistants**
+**Project Team**
 * Hugo Valdés Ortega
 * José Francisco Reyes Maldonado
 * Emilio Rafael García García
