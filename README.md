@@ -1,6 +1,6 @@
 # Simulink-Based Design and Control of an Autonomous Library Assistant Robot
 
-![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge) ![Maintained](https://img.shields.io/badge/status-maintained-brightgreen?style=for-the-badge) ![Award](https://img.shields.io/badge/ExpoCEM_3.0_🏆-2nd_Place_(Senior)-FFD700?style=for-the-badge)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge) ![Maintained](https://img.shields.io/badge/status-maintained-brightgreen?style=for-the-badge) ![Award](https://img.shields.io/badge/ExpoCEM_3.0_@UDLAP🏆-2nd_Place_(Senior)-FFD700?style=for-the-badge)
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=for-the-badge&logo=mathworks&logoColor=white) ![Simulink](https://img.shields.io/badge/Simulink-orange?style=for-the-badge&logo=mathworks&logoColor=white)
 
@@ -206,11 +206,11 @@ As indicated in the MIT License, this software is provided **"as is", without wa
 
 ## 👥 Authors
 
-**PM**
+**Lead Developers**
 * **Marco Ferreri**
 * **Pietro Borracelli**
 
-**Project Team**
+**Assistants**
 * Hugo Valdés Ortega
 * José Francisco Reyes Maldonado
 * Emilio Rafael García García
