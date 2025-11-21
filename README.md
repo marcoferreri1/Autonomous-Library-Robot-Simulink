@@ -144,8 +144,66 @@ prm.ConnectionDistance = 10; % Max distance to connect two nodes
 ```
 
 
----
+The simulation environment is built upon a **Binary Occupancy Grid**, programmatically defined in MATLAB to ensure flexibility. Instead of using static maps, the layout is generated using parametric variables, allowing for rapid reconfiguration of the testing scenarios without manual redrawing.
+The following snippet demonstrates the initialization of the library map and the definition of obstacle properties:
 
+```matlab
+% --- 1. CREATE LIBRARY MAP ---
+% Large Map (80 rows x 120 columns)
+mapMatrix = zeros(80, 120);
+
+% Outer walls setup
+mapMatrix(1, :) = 1;    mapMatrix(end, :) = 1;
+mapMatrix(:, 1) = 1;    mapMatrix(:, end) = 1;
+
+% Shelf properties (Parametric Design)
+stackWidth = 1;         % Shelf width (m)
+stackLength = 60;       % Shelf length (m)
+stackTopY = 10;         % Y-position where shelves start
+aisleWidth = 10;        % Space for aisles
+
+% 4 Shelves on the LEFT of the entrance
+stackColumn = aisleWidth + 1; % Start column (X=11)
+```
+### 🛠️ Customization & Layout Modification
+
+Since the map is defined mathematically, extending or modifying the library layout is straightforward:
+
+* **Adjusting Spacing:** Modifying the `aisleWidth` variable automatically recalculates the spacing between all subsequent shelves, allowing for easy testing of narrow-aisle navigation algorithms.
+* **Adding Shelves:** To introduce additional storage units or change the configuration, you can simply target new indices in the `mapMatrix` (e.g., `mapMatrix(rows, cols) = 1`) using the existing logic loops.
+* **Scaling the Environment:** The global dimensions can be altered by changing the `zeros(80, 120)` initialization, providing a scalable testing ground for the robot's path planning capabilities.
+
+
+---
+## ⚙️ Simulink Control Architecture
+
+The following block diagram represents the complete **Digital Twin** of the robot, integrating high-level kinematic control with low-level motor dynamics and physical simulation.
+
+![Simulink Diagram](Results/Images/9.jpeg)
+
+### 🔍 System Breakdown
+
+* **↖️ Top-Left: Reference Generation**
+    The system inputs are derived from the **Path Planning** module. The `simulink_path_data` block provides the desired trajectory points ($x_{ref}, y_{ref}, \theta_{ref}$) which serve as the setpoints for the control loop.
+
+* **⬆️ Top-Center: High-Level Kinematic Control**
+    This is the "brain" of the robot.
+    * **Cinematic Controller:** Calculates the position error and computes the required linear ($v$) and angular ($\omega$) velocities for the robot body.
+    * **Inverse Kinematics:** Translates the robot's body velocities into individual wheel angular velocities ($\omega_L, \omega_R$).
+
+* **⬇️ Bottom-Center: Low-Level Motor Control**
+    This section implements the inner control loop.
+    * **PI Controllers:** Two discrete `PI(s)` controllers regulate the torque ($\tau$) sent to the motors by comparing the desired wheel speeds with the actual feedback from the Simscape model.
+
+* **↙️ Left & Bottom-Left: Simscape Multibody Plant**
+    This vertical section represents the physical modeling of the robot (**Digital Twin**).
+    * It includes the `World Frame`, `Solver Configuration`, and rigid body transforms that simulate the robot's chassis and wheels.
+    * **Sensors** in this block measure the **actual state** ($x_{act}, y_{act}, \theta_{act}$), closing the primary feedback loop.
+
+* **➡️ Right: Performance Monitoring**
+    The output section contains **Scopes** and workspace writers to visualize real-time performance.
+    * Graphs compare the *Desired vs. Actual* velocities.
+    * Plots display the cross-track error and trajectory tracking accuracy during the simulation.
 
 ## ✅ Conclusion
 
