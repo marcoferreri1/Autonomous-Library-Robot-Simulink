@@ -91,9 +91,9 @@ We present a complete framework, from path planning in a virtual map to high-pre
 
 * **Main Simulator:** MATLAB & Simulink
 
-* **Map Generation:** `binaryOccupancyMap` (inflated by robot radius)
+* **Map Generation:** `binaryOccupancyMap` (inflated by robot radius) [NAVIGATION TOOLBOX]
 
-* **Path Planning Algorithm:** `mobileRobotPRM` (Probabilistic Roadmap)
+* **Path Planning Algorithm:** `mobileRobotPRM` (Probabilistic Roadmap) [NAVIGATION TOOLBOX]
 
 * **Control Architecture:** Simulink Block Diagram (Cascade Control)
 
